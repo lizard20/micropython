@@ -2,15 +2,17 @@ from machine import Pin, PWM
 
 '''
     Produce a PWM signal output 
-    in Port 15
+    on Port GPIO15
 '''
 
-PORT = 15
-FREQUENCY = 10_000 # Hz
-DUTY_CYCLE = 512 # 1023 - 100 %
+PORT = 15   # GPIO15
+FREQUENCY = 10_000  # Hz
+DUTY_CYCLE = 512    # 1023 - 100 %
 
-pwm = PWM(Pin(PORT), freq = FREQUENCY, duty = DUTY_CYCLE)
+pwm = PWM(Pin(PORT),            # port number
+          freq = FREQUENCY,     # frequency
+          duty = DUTY_CYCLE)    # duty cycle
 
-print(f"Frequency:  {FREQUENCY:,} Hz")
-print(f"Duty Cycle: {DUTY_CYCLE*100/1023 :.2f} % ")
-
+print(f"Port: GPIO{PORT}")
+print(f"Frequency:  {pwm.freq():,} Hz")
+print(f"Frequency:  {pwm.duty()*100/1023:0.2f} %")
