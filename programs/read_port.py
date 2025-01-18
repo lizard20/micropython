@@ -3,6 +3,8 @@ from time import sleep
 
 '''
     Read  port GPIO13 every 1 second
+
+    Author: Aldo Núñez
 '''
 
 PORT = 13    # GPIO13
@@ -14,5 +16,5 @@ read_port = Pin(PORT,           # port number
 
 while True:
     input_port = read_port.value()
-    print(f"Input on pin {PORT}: {input_port}")
+    print(f"Input on port: GPIO{PORT}: {input_port}")
     sleep(SECONDS)

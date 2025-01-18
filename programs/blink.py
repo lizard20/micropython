@@ -3,6 +3,8 @@ from time import sleep
 
 '''
     Blink a Led connected to port GPIO2
+
+    Author: Aldo Núñez
 '''
 
 PORT = 2       # GPIO2
@@ -16,7 +18,7 @@ while(True):
     sleep(SECONDS)
     led.off()
     sleep(SECONDS)
-    print(f"Blinking on Port GPIO{PORT}")
+    print(f"Blinking on port: GPIO{PORT}")
 
 
 
